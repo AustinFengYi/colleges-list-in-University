@@ -1,0 +1,51 @@
+<style>
+  .container{
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    transform: translateY(10%);
+  }
+
+  </style>
+
+<div class="container">
+  <div class="row">
+      
+      <div class="col-sm-4 col-md-3">
+      <div class="panel panel-danger">
+        <div class="panel-heading">
+          <h3 class="panel-title text-center"><%= @todo.name %></h3>
+        </div>
+
+        <div class="panel-body">
+          <p class="text-center"><strong><%= @todo.introduction %></strong></p>       
+        </div>
+      </div>
+      </div> 
+      
+      <div class="clearfix"></div>
+
+      <% @tasks.each do |task| %>
+      <div class="col-sm-4 col-md-3">
+      <div class="panel panel-warning">
+        <div class="panel-heading">
+          <h3 class="panel-title text-center"><%= task.name %></h3>
+        </div>
+
+        <div class="panel-body">
+          <p class="text-center"><strong><%= task.introduction %></strong></p>       
+        </div>
+      </div> 
+    </div>
+      <% end %>
+
+
+    
+      <div class="col-sm-12 col-md-12">
+        <%= link_to "Return",root_path,class:"btn btn-default"%>
+      </div>
+      
+    
+  </div>
+</div>  
+
